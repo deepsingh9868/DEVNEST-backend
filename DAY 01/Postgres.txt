@@ -1,0 +1,145 @@
+                                            ***************
+                                            ***DATABASES***
+                                            ***************
+
+<--- List databases --->
+
+\l
+
+// List all databases using \l (or \list)
+
+\l+ 
+
+// List all databases using \l+ with more details (including description, tablespace & DB size) 
+
+<----------------------->
+
+
+<--- Help on CREATE DATABASE command syntax (\h Gives Help on SQL Command Syntax) --->
+
+\h CREATE DATABASE
+
+//Help on SQL Command Syntax (For e.g. CREATE DATABASE) 
+
+<------------------------------------------------------------------------------------>
+
+
+<--- Create database --->
+
+CREATE DATABASE mytest;
+
+//(Creates a new database “mytest”
+//By default, the owner of the database is the current login user)
+
+<----------------------->
+
+
+Creates a new database “mytest”
+
+//By default, the owner of the database is the current login user.
+
+
+<--- Connect To database --->
+
+\c mytest;
+You are now connected to database "test" as user "postgres".
+
+<--------------------------->
+
+
+******************************************************************************************************************************************************************
+
+
+                                        **************
+                                        *** TABLES ***
+                                        **************
+
+<--- Show table --->
+
+\d TABLE_NAME
+
+// Show table definition including indexes, constraints & triggers (psql)
+
+\d+ TABLE_NAME
+// More detailed table definition including description and physical disk size (psql)
+
+<------------------->
+
+
+<--- List tables from current schema --->
+
+\dt
+
+// List tables from current schema
+
+<--------------------------------------->
+
+
+<--- List tables from all schemas --->
+
+\dt *.*
+
+// List tables from all schemas
+
+<------------------------------------>
+
+
+<--- List tables for a schema --->
+
+\dt <name-of-schema>.*
+
+// List the tables in a specific schema
+
+<-------------------------------->
+
+
+<--- Copy table data to CSV file --->
+
+\copy (SELECT * FROM __table_name__) TO 'file_path_and_name.csv' WITH CSV
+
+// Export a table as CSV
+
+<----------------------------------->
+
+
+<--- Check indexes for a table using sql --->
+
+SELECT * FROM pg_indexes WHERE tablename='__table_name__' AND
+schemaname='__schema_name__';
+
+// Show table indexes
+
+<------------------------------------------->
+
+
+<--- Collects statistics about the contents of tables --->
+
+ANALYZE [__table__]
+
+// Analyze a table and store the results in the pg_statistic system catalog
+//With no parameter, ANALYZE examines every table in the current database
+
+
+<--- Adding comment on table/column --->
+
+Comment on table employee is 'Stores employee records';
+
+// Comment on table
+
+Comment on column employee.ssn is 'Employee Social Security Number';
+
+// Comment on column
+
+<------------------------------------->
+
+
+<--- Approximate Table Row count / Table Cardinality --->
+
+SELECT reltuples AS card FROM pg_class WHERE relname = '<table_name>';
+
+// Use this to do fast (but not exact) counts from tables. Helpful if table has millions / billions of records and you just want estimated rows quickly.
+
+<-------------------------------------------------------->
+
+
+***************************************************************************************************************************************************************
