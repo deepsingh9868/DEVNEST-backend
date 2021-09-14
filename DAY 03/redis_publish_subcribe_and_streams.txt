@@ -63,7 +63,7 @@ term 1: SUBSCRIBE
 term 2:PUBLISH
 XADD mystream * name devsnest
 
-
+  
 //LOOPING THROUGH STREAM IDs
 >XRANGE mystream START END
 >XRANGE mystream 10001-0 1630334456611-0
