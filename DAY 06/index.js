@@ -5,7 +5,7 @@ const program  = require('commander');
 
 program
  .command('dir')
- .argument("dirname")
+ .argument("dirname") 
  .description(`This will create a folder`)
  .action((dirname)=>{
      fs.mkdir(dirname,(err)=>{
