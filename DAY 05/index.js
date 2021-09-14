@@ -37,7 +37,7 @@ program
  .description(`This will read a file`)
  .action((filename)=>{
      const data = fs.readFileSync(filename,"utf8");
-     console.log(data);
+     console.log(data); 
  })
 
  
