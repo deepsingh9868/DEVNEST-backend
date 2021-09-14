@@ -43,9 +43,9 @@ Alwasys use ; for commands
 	NAME CHAR(20) NOT NULL,
 	AGE INT NOT NULL,
 	ADDRESS varCHAR[25],
-	SALARY DECIMAL(18,2),
+	SALARY DECIMAL(18,2), 
 	
-	PRIMARY KEY(ID),
+	PRIMARY KEY(ID),   
 	);
 
 >DROP SCHEMA myschema CASCADE;
