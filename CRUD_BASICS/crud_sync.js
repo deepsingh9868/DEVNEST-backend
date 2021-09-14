@@ -8,7 +8,7 @@
 // 3) Add more data into the file at the end of the existing data
 // 4) Read this data without getting the buffer data at first
 // you have to do file encoding here - hint
-// 5) Rename your file bio.txt to my_bio.txt
+// 5) Rename your file bio.txt to my_bio.txt 
 // 6) delete all this 
 
 

@@ -40,7 +40,7 @@
 const fs = require('fs');
 
 // 1) 
-fs.mkdir("CRUD",(err) =>{
+fs.mkdir("CRUD",(err) =>{ 
     console.log("CRUD folder has been created");
 });
 
