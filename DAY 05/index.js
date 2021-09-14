@@ -39,7 +39,7 @@ program
      const data = fs.readFileSync(filename,"utf8");
      console.log(data); 
  })
-
+  
  
  program
  .command('rename')
