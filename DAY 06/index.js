@@ -2,6 +2,8 @@
   // node index.js to get all info about command 
   // node index.js [command]
 
+  
+
 const fs = require('fs');
 const program  = require('commander');
 
