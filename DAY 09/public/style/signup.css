@@ -1,0 +1,33 @@
+.card{
+    margin-left: 60vh;
+    width: 600px;
+    height: 300px;
+    background-color: powderblue;
+    font-size: large;
+    margin-top: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#btn{
+    font-size: 20px;
+    padding: 5px;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    border: 1px solid gray;
+    border-radius: 10px;
+    font-family: cursive;
+}
+#btn:hover{
+    cursor: pointer;
+    background-color: blue;
+    color: white;
+    font-family: cursive;
+}
+
+.card input{
+    font-size: 30px;
+}
