@@ -1,30 +1,30 @@
-const {Sequelize} = require('sequelize');
-const {
-    sequelize_dialect,
+const { Sequelize } = require('sequelize');
+const { sequelize_database,
+    sequelize_username,
+    sequelize_password,
     sequelize_host,
-}  = require('../config/index');
+    sequelize_dialect, } = require("../config");
 
 const sequelize = new Sequelize(
-    // "postgres",
-    // "postgres",
-    // "134523",
+    sequelize_database,
+    sequelize_username,
+    sequelize_password,
     {
         host: sequelize_host,
-        dialect : sequelize_dialect,
+        dialect: sequelize_dialect
     }
 );
 
 sequelize.sync();
 
-(async()=>{
-        try{
-            await sequelize.authenticate();
-            console.log("Connection established with database");
-
-        }catch(err) {
-            console.log("Unable to connect to database");
-        }
+(async () => {
+    try {
+        await sequelize.authenticate();
+        console.log("Connection with DB established");
+    }
+    catch (err) {
+        console.error("Unable to connect with DB");
+    }
 })();
-
 
 module.exports = sequelize;
