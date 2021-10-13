@@ -11,6 +11,8 @@ const register = async (req, res) => {
       return;
     }
 
+
+
     const salt = bcrypt.genSaltSync(saltRounds);
     const passwordHash = bcrypt.hashSync(password, salt);
 
