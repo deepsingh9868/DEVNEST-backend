@@ -23,7 +23,6 @@ app.use(session({
 
 
 
-
 // signup section
 app.get('/signup', (req,res)=>{
     res.render('signup');

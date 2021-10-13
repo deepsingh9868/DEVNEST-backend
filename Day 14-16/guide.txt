@@ -1,0 +1,109 @@
+Day 14
+login nd register  user, jwt, passport , .env -> using in redis
+
+npx express-generator
+npm i -s dotenv
+.env file and use in app.js
+npm i -s passport-jwt passport
+npm install bcryptjs
+
+localhost:5000/register (post)
+{
+    "email":"goblinNot@gmail.com",
+    "password":"Query123*",
+    "confirmPassword":"Query123*"
+}
+output:
+{
+  "id": 3,
+  "email": "goblinnot@gmail.com",
+  "password": "$2b$10$yWC10vjSkweWnhqolhpwke4g4APJU8dWiDqSWXynaNjdi5NePG89G",
+  "fullName": "goblin",
+  "updatedAt": "2021-09-27T03:11:14.879Z",
+  "createdAt": "2021-09-27T03:11:14.879Z"
+}
+
+ sudo systemctl start mongod
+
+
+localhost:5000/passport/register-user
+{
+    "email":"goblinNot@gmail.com",
+    "username":"goblinka,
+    "password":"Query123*",
+    "name":"goblini*"
+}
+output:
+{
+  "message": "Hurry! now you are successfully registred. Please nor login.",
+  "success": true,
+  "user": {
+    "name": "goblini*",
+    "email": "goblinkanot@gmail.com",
+    "role": "user",
+    "username": "goblinka",
+    "password": "$2a$12$UBwb3m6zqNhuN7BpMPee8.H2ljAgaNSW.YRzySJDX9XVNqaw80E/i",
+    "_id": "615138fa052b8b8110351af3",
+    "createdAt": "2021-09-27T03:22:34.043Z",
+    "updatedAt": "2021-09-27T03:22:34.043Z",
+    "__v": 0
+  }
+}
+localhost:5000/passport/login-user
+{
+    "username":"goblinka",
+    "password":"Query123*"
+}
+output:
+ {
+  "username": "goblinka",
+  "role": "user",
+  "email": "goblinkanot@gmail.com",
+  "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjE1MTM4ZmEwNTJiOGI4MTEwMzUxYWYzIiwicm9sZSI6InVzZXIiLCJ1c2VybmFtZSI6Imtuc2hpa2EiLCJlbWFpbCI6Imtuc2hpa2Fub3RAZ21haWwuY29tIiwiaWF0IjoxNjMyNzEzMjUzLCJleHAiOjE2MzMzMTgwNTN9.qGvcO3PwIaqlgIIcMjV2LHDmyT-qqAfNPNxe83RAcdM",
+  "expiresIn": 168,
+  "message": "Hurray! You are now logged in.",
+  "success": true
+}
+localhost:5000/passport/user-protected
+auth bearer token 
+
+
+Day 15:
+
+Pagination 
+products (route , model and add in app.js)
+
+localhost:5000/products
+node utils/init.js (make sure to run before to get data stored in database)
+need to add products (utils->init.js)
+
+security handling .. passing something which can become sql query (user.js 15 line)
+
+how to go from http -> https (add certificate in server)
+
+
+
+
+DAy 16:
+
+how to send stream as done in apps like netflix
+
+route for stream in app.js -> routes (folder stream.js same config)
+
+http://localhost:5000/stream
+
+//busboy npm  csv->json when file is coming from frontend
+
+
+
+Day 17:
+
+implementing payment
+route for stripe in app.js -> routes (folder stream.js same config) also the html file
+npm i stripe
+
+make account in stripe 
+copy security key
+also make account setting section in https://dashboard.stripe.com/account
+
+run server in http://localhost:5000/stripe
